@@ -1,0 +1,33 @@
+<section id="event">
+  <div class="container-fluid p-5">
+    <app-message></app-message>
+    <div *ngIf="!event" class="m-auto">
+      <h1 class="text-center display-3 mt-5">
+        <i class="fa fa-spinner fa-spin"></i>
+      </h1>
+    </div>
+    <div *ngIf="event">
+      <div class="row">
+        <div class="col-lg-4">
+          <img src="" alt="eventImage" class="image img-thumbnail">
+        </div>
+        <div class="col-lg-5">
+          <div class="row">
+            <h4>{{event.title}}</h4>
+            <p class="m-0">
+              <small>by {{ event.name }}</small>
+            </p>
+            <p class="m-0">
+              <small class="text-muted"> {{ event.category.name }}</small> 
+             </p>
+          </div>
+          <div class="col-6">
+
+          </div>
+          <hr>
+          <p class="lead">{{ event.description }} </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
