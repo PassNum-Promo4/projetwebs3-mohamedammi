@@ -22,6 +22,7 @@ import { PostEventComponent } from './post-event/post-event.component';
 import { MyEventsComponent } from './my-events/my-events.component';
 import { CategoryComponent } from './category/category.component';
 import { EventComponent } from './event/event.component';
+import { EditEventComponent } from './edit-event/edit-event.component';
 
 
 
@@ -38,7 +39,8 @@ import { EventComponent } from './event/event.component';
     PostEventComponent,
     MyEventsComponent,
     CategoryComponent,
-    EventComponent
+    EventComponent,
+    EditEventComponent
   ],
   imports: [
     BrowserModule,

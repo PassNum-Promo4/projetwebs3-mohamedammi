@@ -1,6 +1,6 @@
-<section id="postEvent">
+<section id="editEvent">
   <div class="container p-5">
-    <h4 class="display-4">Post an Event</h4>
+    <h4 class="display-4">Edit an Event</h4>
     <hr>
     <app-message></app-message>
     <div *ngIf="!categories" class="m-auto">
@@ -46,8 +46,8 @@
             <label>Upload Image</label>
             <input type="file" class="form-control-file" accept="image/*" name="file" (change)="fileChange($event)">
           </div>
-          <button type="button" class="btn btn-success" (click)="post()" [disabled]="btnDisabled">Post</button>
-          <button type="button" class="btn btn-success" (click)="edit()" [disabled]="btnDisabled">Edit</button>
+          <button type="button" class="btn btn-warning" (click)="edit()" [disabled]="btnDisabled">Edit</button>
+          <button type="button" class="btn btn-danger" (click)="delete()" [disabled]="btnDisabled">Delete</button>          
         </form>
       </div>
     </div>
