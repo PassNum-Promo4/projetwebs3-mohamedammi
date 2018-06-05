@@ -14,10 +14,10 @@
         <div class="col-lg-5">
           <div class="row">
             <h4>{{event.title}}</h4>
-            <p class="m-0">
-              <small>by {{ event.name }}</small>
+            <p *ngIf="event.owner" class="m-0">
+              <small> by {{ event.owner.name }}</small>
             </p>
-            <p class="m-0">
+            <p *ngIf="!event.owner"class="m-0">
               <small class="text-muted"> {{ event.category.name }}</small> 
              </p>
           </div>
@@ -34,7 +34,7 @@
             Edit Event</a>
         </div>
         <div class="col-md-6">
-          <a routerLink="/profile/editevent" class="btn btn-outline-danger btn btn-block">
+          <a routerLink="/profile/editevent"  class="btn btn-outline-danger btn btn-block">
             Delete Event</a>
         </div>
       </div>

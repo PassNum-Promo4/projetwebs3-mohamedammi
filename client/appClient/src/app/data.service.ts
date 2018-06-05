@@ -10,7 +10,7 @@ export class DataService {
   messageType = 'danger';
 
   user:any;
-
+  event:any;
   constructor(private router:Router, private rest: RestApiService) {
     this.router.events.subscribe(event =>{
       if(event instanceof NavigationStart){
@@ -44,4 +44,16 @@ export class DataService {
     }
   }
 
+  async getEvent(id) {
+    try {
+      if (localStorage.getItem('token')) {
+        const data = await this.rest.get(
+          `http://localhost:3030/api/event/${id}`
+        );
+        this.event = data['event'];
+      }
+    } catch (error) {
+      this.error(error);
+    }
+  }
 }

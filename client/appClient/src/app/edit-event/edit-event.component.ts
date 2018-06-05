@@ -11,14 +11,26 @@ import { RestApiService } from '../rest-api.service';
 export class EditEventComponent implements OnInit {
 
   event: any;
-
+  categories: any;
+  btnDisabled = false;
   constructor(private activatedRoute: ActivatedRoute,
     private data: DataService,
     private rest: RestApiService,
     private router: Router) { }
 
-  ngOnInit() {
-  }
+    async ngOnInit() {
+      try {
+        const data = await this.rest.get(
+          "http://localhost:3030/api/categories"
+        );
+        data['success']
+        ? (this.categories = data['categories'])
+        : this.data.error(data['message']);
+      } catch (error) {
+        this.data.error(error['message']);
+      }
+    }
+    
   validate(event) {
     if(event.title) {
       if(event.categoryId) {
