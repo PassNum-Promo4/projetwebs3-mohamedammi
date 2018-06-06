@@ -14,7 +14,7 @@ Quick Start
 
 Install the following on your own
 
-    NodeJs
+    npm
 
     Angular-cli
 

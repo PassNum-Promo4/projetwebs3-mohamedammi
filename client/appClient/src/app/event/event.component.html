@@ -22,20 +22,16 @@
              </p>
           </div>
           <div class="col-6">
-
+            <p class="lead">{{ event.date | date:'dd-MM-yyyy' }} </p>
           </div>
           <hr>
           <p class="lead">{{ event.description }} </p>
         </div>
       </div>
-      <div class="row">
+      <div *ngIf="this.event.owner" class="row">
         <div class="col-md-6 mb-3">
           <a routerLink="/profile/editevent" class="btn btn-outline-warning btn-block">
             Edit Event</a>
-        </div>
-        <div class="col-md-6">
-          <a routerLink="/profile/editevent"  class="btn btn-outline-danger btn btn-block">
-            Delete Event</a>
         </div>
       </div>
     </div>
